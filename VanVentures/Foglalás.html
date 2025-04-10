@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foglalás</title>
+    <link rel="stylesheet" href="styles.css"> <!-- A meglévő stíluslap -->
+    <link rel="stylesheet" href="booking.css"> <!-- Az új stíluslap -->
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="Vanventures.html">
+                <img src="images/logo.png" alt="Lakóautó Bérlés Logó">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Rólunk.html">Rólunk</a></li>
+                <li><a href="Vanventures.html#vehicles">Járművek</a></li>
+                <li><a href="Tartozékok.html">Tartozékok</a></li>                
+                <li><a href="Vanventures.html#foglalas">Időpontfoglalás</a></li>
+                <li><a href="Feltételek.html">Szerződési feltételek</a></li>
+                <li><a href="Szabályok.html">Szabályok</a></li>
+                <li><a href="Vanventures.html#contact">Kapcsolat</a></li>
+                <li><a href="gyik.html">GYIK</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="foglalas">
+        <h2>Foglalás</h2>
+        <form id="foglalasForm">
+            <div class="form-group1">
+                <label for="pickupDate">Kiválasztott időpont:</label>
+                <input type="text" id="pickupDate" name="pickupDate" readonly>
+            </div>
+    
+            <div class="form-group1">
+                <label for="returnDate">Visszahozatali időpont:</label>
+                <input type="text" id="returnDate" name="returnDate" readonly>
+            </div>
+    
+            <div class="form-group1">
+                <label for="name">Név:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+    
+            <div class="form-group1">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+    
+            <div class="form-group1">
+                <label for="phone">Telefonszám:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+    
+            <div class="form-group1">
+                <label for="address">Lakhely (cím):</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+    
+            <button type="submit" class="btn">Foglalás megerősítése</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Vanventures. Minden jog fenntartva.</p>
+    </footer>
+
+    <script>
+        // Feltételezve, hogy a naptár kiválasztott időpontjait a főoldalon tárolod
+        const selectedPickupDate = localStorage.getItem('pickupDate');
+        const selectedReturnDate = localStorage.getItem('returnDate');
+
+        document.getElementById('pickupDate').value = selectedPickupDate || '';
+        document.getElementById('returnDate').value = selectedReturnDate || '';
+
+        document.getElementById('foglalasForm').addEventListener('submit', (event) => {
+            event.preventDefault();
+            // Itt lehetne a foglalás adatainak feldolgozása
+            alert('Foglalás sikeresen elküldve!');
+        });
+    </script>
+</body>
+</html>

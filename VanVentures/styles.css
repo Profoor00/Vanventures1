@@ -1,0 +1,751 @@
+* {
+    box-sizing: border-box; /* Minden elem box-sizing beállítása */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Világos háttérszín */
+    color: #333; /* Sötétebb szöveg szín */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #77604e; /* Sötétbarna háttér */
+    color: white;
+    padding: 15px 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Árnyék a fejléc alatt */
+}
+
+.logo img {
+    height: 80px; /* Logó mérete */
+}
+
+nav {
+    display: flex;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* Áttűnés a háttérszín és a szöveg szín változásakor */
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Háttérszín a hover állapotban */
+    color: #f4f4f4; /* Szöveg szín a hover állapotban */
+}
+
+section {
+    padding: 40px 20px; /* Tágabb padding a szekciók körül */
+    margin: 0; /* Eltávolítja a margót, hogy a szekciók teljes szélességben jelenjenek meg */
+    width: 100%; /* Teljes szélesség */
+    background-color: white; /* Fehér háttér a szekciókhoz */
+    border-radius: 0; /* Lekerekített sarkok eltávolítása */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Árnyék a szekciók alatt */
+}
+
+h2 {
+    color: #4a3c2a; /* Cím szín */
+    margin-bottom: 20px; /* Térköz a cím alatt */
+}
+
+#vehicles {
+    text-align: center; /* Középre igazítás */
+    padding: 20px; /* Térköz a szekció körül */
+}
+
+#vehicles h2 {
+    font-size: 2.5em; /* Nagyobb betűméret */
+    color: #333; /* Sötétebb szín a címhez */
+    margin-bottom: 20px; /* Térköz a cím alatt */
+    text-transform: uppercase; /* Nagybetűs írásmód */
+    letter-spacing: 1px; /* Betűköz a címben */
+    font-family: 'Arial', sans-serif; /* Modern betűtípus */
+    position: relative; /* Pozicionálás a díszítő vonalhoz */
+}
+
+#vehicles h2::after {
+    content: ""; /* Üres tartalom a díszítő vonalhoz */
+    display: block; /* Blokk szintű elem */
+    width: 50px; /* A vonal szélessége */
+    height: 4px; /* A vonal magassága */
+    background-color: #77604e; /* A vonal színe */
+    margin: 10px auto; /* Középre igazítás */
+    border-radius: 2px; /* Lekerekített sarkok a vonalon */
+}
+
+.vehicle-container {
+    display: flex; /* Flexbox a boxok elrendezéséhez */
+    justify-content: center; /* Középre igazítás */
+    gap: 20px; /* Térköz a boxok között */
+}
+
+.vehicle-box {
+    background-color: #f9f9f9; /* Világos háttérszín */
+    border: 1px solid #ddd; /* Határvonal */
+    border-radius: 10px; /* Lekerekített sarkok */
+    padding: 20px; /* Térköz a boxon belül */
+    width: 600px; /* Box szélessége */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Árnyék a boxok alatt */
+    transition: transform 0.2s; /* Animáció a hover hatásra */
+}
+
+.vehicle-box:hover {
+    transform: scale(1.05); /* Növelés hover hatásra */
+}
+
+.vehicle-box img {
+    width: 100%; /* Kép szélessége a boxhoz igazítva */
+    height: auto; /* Magasság automatikus */
+    border-radius: 5px; /* Lekerekített sarkok a képeknél */
+}
+
+.vehicle-box h3 {
+    margin: 10px 0; /* Térköz a cím körül */
+}
+
+.vehicle-box ul {
+    list-style-type: none; /* Felsorolás stílus eltávolítása */
+    padding: 0; /* Padding eltávolítása */
+}
+
+.vehicle-box li {
+    margin: 5px 0; /* Térköz a listaelemek között */
+}
+
+.btn {
+    background-color: #77604e; /* Gomb háttérszín */
+    color: white; /* Gomb szöveg színe */
+    border: none; /* Határvonal eltávolítása */
+    border-radius: 5px; /* Lekerekített sarkok */
+    padding: 10px 15px; /* Térköz a gombon belül */
+    cursor: pointer; /* Kézkurzor a gomb fölött */
+    transition: background-color 0.3s; /* Animáció a hover hatásra */
+}
+
+.btn:hover {
+    background-color: #5c4b3d; /* Sötétebb szín hover hatásra */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #77604e; /* Sötétbarna háttér */
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.about-section {
+    background-image: url('images/about-image.png'); /* A háttérkép elérési útja */
+    background-size: cover; /* A kép kitölti a szakaszt */
+    background-position: center; /* A kép középre van igazítva */
+    height: 100vh; /* Teljes magasság */
+    display: flex; /* Flexbox elrendezés */
+    align-items: center; /* Középre igazítás függőlegesen */
+    justify-content: center; /* Középre igazítás vízszintesen */
+    color: white; /* Szöveg színe */
+}
+
+.about-image {
+    position: absolute; /* Pozicionálás a háttérkép mögé */
+    top: 0; /* Felső pozíció */
+    left: 0; /* Bal pozíció */
+    width: 100%; /* Kép szélessége */
+    height: 100%; /* Kép magassága */
+    object-fit: cover; /* Kép kitöltése a területen */
+    z-index: -1; /* Háttérkép mögött */
+}
+
+.about-container {
+    z-index: 1; /* A szöveg a háttérkép felett legyen */
+    padding: 20px; /* Belső margó */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Árnyék a szöveg mögött */
+}
+
+.about-container h2 {
+    font-size: 48px; /* Cím mérete */
+    font-weight: bold; /* Félkövér szöveg */
+    margin: 0; /* Nincs margó */
+}
+
+.about-container p {
+    font-size: 24px; /* Szöveg mérete */
+    margin-top: 10px; /* Felső margó, hogy az alcím közelebb kerüljön a címhez */
+}
+
+#booking {
+    background-color: #f9f9f9; /* Világos háttérszín a szekcióhoz */
+    padding: 40px 20px; /* Tágas padding */
+    border-radius: 10px; /* Lekerekített sarkok */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Árnyék a szekció alatt */
+    margin: 20px auto; /* Középre igazítás */
+    width: 100%; /* Teljes szélesség */
+    text-align: center; /* Középre igazított szöveg */
+}
+
+#booking h2 {
+    color: #4a3c2a; /* Cím szín */
+    margin-bottom: 20px; /* Térköz a cím alatt */
+}
+
+#calendar {
+    display: flex; /* Flexbox elrendezés a hónapokhoz */
+    justify-content: space-between; /* Hónapok közötti távolság */
+}
+
+.month-container {
+    flex: 1; /* Hónapok terület kitöltése */
+    margin: 0 10px; /* Térköz a hónapok között */
+}
+
+#monthDisplay1, #monthDisplay2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.daysContainer {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 oszlop a napokhoz */
+    gap: 2px; /* Csökkentett távolság a napok között */
+}
+
+.day {
+    width: 100%; /* A napok szélessége 100% */
+    height: 50px; /* Növelt magasság a napokhoz */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Lekerekített sarkok a napoknál */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Áttűnés a háttérszín és a méret változásakor */
+}
+
+.day:hover {
+    transform: scale(1.05); /* Növelje meg a napok méretét hover állapotban */
+}
+
+.available {
+    background-color: #a8e6cf; /* Elérhető napok színe */
+}
+
+.booked {
+    background-color: #ff8b8b; /* Foglalt napok színe */
+    cursor: not-allowed;
+}
+
+.booked:hover {
+    background-color: #ff8b8b; /* Foglalt napok hover állapotban */
+}
+
+#selectedDateContainer {
+    margin-top: 20px; /* Térköz a kiválasztott időpont felett */
+    text-align: center; /* Középre igazítás a kiválasztott időpont szövegének */
+}
+
+.btn {
+    display: inline-block; /* Blokk szintű elem */
+    background-color: #4a3c2a; /* Gomb háttérszín */
+    color: white; /* Gomb szöveg szín */
+    padding: 10px 20px; /* Padding a gomb körül */
+    border-radius: 5px; /* Lekerekített sarkok */
+    text-align: center; /* Középre igazított szöveg */
+    text-decoration: none; /* Nincs aláhúzás */
+    margin-top: 20px; /* Térköz a gomb felett */
+    transition: background-color 0.3s; /* Áttűnés a háttérszín változásakor */
+}
+
+.btn:hover {
+    background-color: #6b5b4a; /* Gomb háttérszín hover állapotban */
+}
+
+.contact-map-container {
+    display: flex; /* Flexbox aktiválása */
+    justify-content: center; /* Középre igazítás */
+    align-items: flex-start; /* Felső igazítás */
+    margin: 20px auto; /* Középre igazítás a szülőelemnek */
+}
+
+#contact {
+    background-color: #f9f9f9; /* Világos háttérszín */
+    padding: 40px 20px; /* Tágas padding */
+    border-radius: 10px; /* Lekerekített sarkok */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Árnyék a szekció alatt */
+    margin: 20px; /* Margó */
+    max-width: 500px; /* Maximális szélesség */
+    width: 45%; /* Szélesség */
+    height: 600px; /* Fix magasság */
+}
+
+#map {
+    background-color: #f9f9f9; /* Világos háttérszín */
+    padding: 40px 20px; /* Tágas padding */
+    border-radius: 10px; /* Lekerekített sarkok */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Árnyék a szekció alatt */
+    margin: 20px; /* Margó */
+    width: 35%; /* Szélesség */
+    height: 600px; /* Fix magasság */
+}
+
+#map h2 {
+    text-align: center; /* Középre igazított cím */
+}
+
+#contact h2 {
+    color: #4a3c2a; /* Cím szín */
+    margin-bottom: 10px; /* Térköz a cím alatt */
+}
+
+#contact p {
+    margin-bottom: 20px; /* Térköz a bevezető szöveg alatt */
+    color: #666; /* Szürke szöveg szín */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Térköz a mezők között */
+    text-align: left; /* Balra igazított szöveg */
+}
+
+label {
+    display: block; /* A címkék blokk szintű elemek */
+    margin-bottom: 5px; /* Térköz a címke alatt */
+    font-weight: bold; /* Félkövér címkék */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%; /* Szélesség 100% */
+    max-width: 300px; /* Maximális szélesség a mezőknek */
+    padding: 10px; /* Padding a mezők körül */
+    border: 1px solid #ccc; /* Határ */
+    border-radius: 5px; /* Lekerekített sarkok */
+    font-size: 16px; /* Betűméret */
+    transition: border-color 0.3s; /* Áttűnés a határszín változásakor */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #4a3c2a; /* Határszín fókusz állapotban */
+    outline: none; /* Nincs outline */
+}
+
+button {
+    background-color: #4a3c2a; /* Gomb háttérszín */
+    color: white; /* Gomb szöveg szín */
+    border: none; /* Nincs határ */
+    padding: 10px 20px; /* Padding a gomb körül */
+    border-radius: 5px; /* Lekerekített sarkok */
+    cursor: pointer; /* Kéz kurzor */
+    font-size: 16px; /* Betűméret */
+    transition: background-color 0.3s; /* Áttűnés a háttérszín változásakor */
+    display: inline-block; /* Középre igazítás */
+    margin-top: 10px; /* Térköz a gomb felett */
+}
+
+button:hover {
+    background-color: #6b5b4a; /* Gomb háttérszín hover állapotban */
+}
+
+#vehicles {
+    text-align: center; /* Középre igazítás */
+    padding: 40px 20px; /* Tágas padding a szekció körül */
+}
+
+.vehicles-container {
+    display: flex; /* Flexbox a boxok elrendezéséhez */
+    justify-content: center; /* Középre igazítás */
+}
+
+
+#why-choose-us {
+    background-color: #f8f6f2; /* Világos háttérszín */
+    padding: 40px 20px; /* Tágas padding */
+    margin: 20px auto; /* Középre igazítás */
+    border-radius: 10px; /* Lekerekített sarkok */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Árnyék a szekció alatt */
+    position: relative; /* Pozicionálás a díszítő elemhez */
+}
+
+#why-choose-us h2 {
+    text-align: center; /* Cím középre igazítása */
+    color: #4a3c2a; /* Cím szín */
+    margin-bottom: 20px; /* Térköz a cím alatt */
+    font-size: 2.5em; /* Cím mérete */
+    position: relative; /* Pozicionálás a díszítő vonalhoz */
+}
+
+#why-choose-us h2::after {
+    content: ""; /* Üres tartalom a díszítő vonalhoz */
+    display: block; /* Blokk szintű elem */
+    width: 50px; /* A vonal szélessége */
+    height: 4px; /* A vonal magassága */
+    background-color: #77604e; /* A vonal színe */
+    margin: 10px auto; /* Középre igazítás */
+    border-radius: 2px; /* Lekerekített sarkok a vonalon */
+}
+
+.features-container {
+    display: flex; /* Flexbox a boxok elrendezéséhez */
+    flex-wrap: wrap; /* Flexbox wrap, hogy a boxok új sorba kerüljenek, ha szükséges */
+    justify-content: center; /* Középre igazítás */
+    gap: 20px; /* Térköz a boxok között */
+}
+
+.feature-box {
+    background-color: white; /* Fehér háttér a boxokhoz */
+    border: 1px solid #ddd; /* Határvonal */
+    border-radius: 10px; /* Lekerekített sarkok */
+    padding: 20px; /* Térköz a boxon belül */
+    width: 300px; /* Box szélessége */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Árnyék a boxok alatt */
+    transition: transform 0.2s; /* Animáció a hover hatásra */
+}
+
+.feature-box:hover {
+    transform: scale(1.05); /* Növelés hover hatásra */
+}
+
+.feature-box h3 {
+    color: #4a3c2a; /* Cím szín */
+    margin-bottom: 10px; /* Térköz a cím alatt */
+}
+
+.feature-box p {
+    color: #000000; /* Szürke szöveg szín */
+}
+
+#booking-process {
+    background-color: #f9f9f9; /* Világos háttérszín */
+    padding: 40px 20px; /* Tágas padding */
+    margin: 20px auto; /* Középre igazítás */
+    border-radius: 10px; /* Lekerekített sarkok */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Árnyék a szekció alatt */
+}
+
+#booking-process h2 {
+    text-align: center; /* Cím középre igazítása */
+    color: #4a3c2a; /* Cím szín */
+    margin-bottom: 20px; /* Térköz a cím alatt */
+    font-size: 2.5em; /* Cím mérete */
+}
+
+.process-container {
+    display: flex; /* Flexbox a lépések elrendezéséhez */
+    justify-content: center; /* Középre igazítás */
+    align-items: center; /* Középre igazítás függőlegesen */
+    flex-wrap: wrap; /* Flexbox wrap, hogy a lépések új sorba kerüljenek, ha szükséges */
+}
+
+.process-step {
+    background-color: white; /* Fehér háttér a lépésekhez */
+    border: 1px solid #ddd; /* Határvonal */
+    border-radius: 10px; /* Lekerekített sarkok */
+    padding: 20px; /* Térköz a lépésen belül */
+    width: 200px; /* Lépés szélessége */
+    text-align: center; /* Középre igazított szöveg */
+    margin: 10px; /* Térköz a lépések között */
+    position: relative; /* Pozicionálás a számhoz */
+    transition: transform 0.2s; /* Animáció a hover hatásra */
+    min-height: 150px; /* Minimális magasság a boxoknak */
+}
+
+.process-step:hover {
+    transform: scale(1.05); /* Növelés hover hatásra */
+}
+
+.step-number {
+    background-color: #77604e; /* Szám háttérszín */
+    color: white; /* Szám szöveg szín */
+    border-radius: 50%; /* Kör alakú szám */
+    width: 40px; /* Szám szélessége */
+    height: 40px; /* Szám magassága */
+    display: flex; /* Flexbox a szám középre igazításához */
+    align-items: center; /* Középre igazítás függőlegesen */
+    justify-content: center; /* Középre igazítás vízszintesen */
+    margin: 0 auto 10px; /* Térköz a szám alatt */
+}
+
+.arrow {
+    font-size: 2em; /* Nyíl mérete */
+    color: #4a3c2a; /* Nyíl szín */
+    margin: 0 10px; /* Térköz a nyíl körül */
+}
+
+.step-link {
+    text-decoration: none; /* Aláhúzás eltávolítása */
+    color: inherit; /* Örökli a szöveg színét */
+}
+
+#accessories {
+    background-color: #f9f9f9; /* Világos háttérszín */
+    padding: 40px 20px; /* Tágas padding */
+    margin: 20px auto; /* Középre igazítás */
+}
+
+.accessories-title {
+    color: #4a3c2a; /* Cím szín */
+    margin-bottom: 20px; /* Térköz a cím alatt */
+    font-size: 2.0em; /* Cím mérete */
+    text-transform: uppercase; /* Nagybetűs írásmód */
+    text-align: center; /* Középre igazítás */
+}
+
+.accessories-container {
+    display: flex;
+    flex-wrap: wrap; /* Flexbox elrendezés */
+    justify-content: space-around; /* Egyenletes elosztás */
+}
+
+.accessory-item {
+    background-color: #fff; /* Fehér háttér a boxoknak */
+    border: 1px solid #ddd; /* Szürke keret */
+    border-radius: 8px; /* Lekerekített sarkok */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Árnyék */
+    margin: 10px; /* Margó a boxok között */
+    padding: 15px; /* Belső padding */
+    width: 200px; /* Fix szélesség */
+    text-align: center; /* Középre igazítás */
+}
+
+.accessory-image {
+    max-width: 100%; /* Kép maximális szélessége */
+    height: auto; /* Magasság automatikus */
+    border-radius: 5px; /* Lekerekített sarkok a képeknél */
+}
+
+.price {
+    font-weight: bold; /* Vastag betűstílus az árnak */
+    color: #e74c3c; /* Piros szín az árnak */
+    margin-top: 10px; /* Felső margó az ár előtt */
+}
+
+#about-us {
+    background-color: #f9f9f9; /* Világos háttérszín */
+    padding: 40px 20px; /* Tágas padding */
+    margin: 20px auto; /* Középre igazítás */
+    border-radius: 10px; /* Lekerekített sarkok */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Árnyék a szekció alatt */
+    text-align: center; /* Középre igazított szöveg */
+}
+
+#about-us h2 {
+    color: #4a3c2a; /* Cím szín */
+    margin-bottom: 20px; /* Térköz a cím alatt */
+    font-size: 2.5em; /* Cím mérete */
+    text-transform: uppercase; /* Nagybetűs írásmód */
+}
+
+.about-image {
+    width: 100%; /* Kép szélessége */
+    max-width: 600px; /* Maximális szélesség */
+    height: auto; /* Magasság automatikus */
+    border-radius: 10px; /* Lekerekített sarkok a képnél */
+    margin: 20px 0; /* Térköz a kép körül */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Árnyék a kép alatt */
+}
+
+.about-description {
+    color: #333; /* Szöveg szín */
+    font-size: 1.2em; /* Betűméret */
+    line-height: 1.5; /* Sor magasság */
+    background-color: #ffffff; /* Fehér háttér a leírásnak */
+    padding: 20px; /* Padding a leírás körül */
+    border-radius: 10px; /* Lekerekített sarkok */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Árnyék a leírás alatt */
+    margin: 20px 0; /* Térköz a leírás körül */
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#rules {
+    background-color: #f9f9f9; /* Világos háttérszín */
+    padding: 40px 20px; /* Tágas padding */
+    margin: 20px auto; /* Középre igazítás */
+    border-radius: 10px; /* Lekerekített sarkok */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Árnyék a szekció alatt */
+    text-align: center; /* Középre igazított szöveg */
+}
+
+#rules h2 {
+    color: #4a3c2a; /* Cím szín */
+    margin-bottom: 20px; /* Térköz a cím alatt */
+    font-size: 2.5em; /* Cím mérete */
+    text-transform: uppercase; /* Nagybetűs írásmód */
+}
+
+.rules-description {
+    color: #333; /* Szöveg szín */
+    font-size: 1.2em; /* Betűméret */
+    line-height: 1.5; /* Sor magasság */
+    background-color: #ffffff; /* Fehér háttér a leírásnak */
+    padding: 20px; /* Padding a leírás körül */
+    border-radius: 10px; /* Lekerekített sarkok */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Árnyék a leírás alatt */
+    margin: 20px 0; /* Térköz a leírás körül */
+}
+
+.rules-description ul {
+    list-style-type: none; /* Felsorolás stílus eltávolítása */
+    padding: 0; /* Padding eltávolítása */
+}
+
+.rules-description li {
+    margin: 10px 0; /* Térköz a listaelemek között */
+    text-align: left; /* Balra igazított szöveg */
+}
+
+#terms1 {
+    background-color: #f9f9f9; /* Világos háttérszín */
+    padding: 40px 20px; /* Tágas padding */
+    margin: 20px auto; /* Középre igazítás */
+    border-radius: 10px; /* Lekerekített sarkok */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Árnyék a szekció alatt */
+    text-align: center; /* Középre igazított szöveg */
+}
+
+#terms1 h2 {
+    color: #661b02; /* Cím szín */
+    margin-bottom: 20px; /* Térköz a cím alatt */
+    font-size: 2.5em; /* Cím mérete */
+    text-transform: uppercase; /* Nagybetűs írásmód */
+}
+
+.terms-description1 {
+    color: #333; /* Szöveg szín */
+    font-size: 1.2em; /* Betűméret */
+    line-height: 1.5; /* Sor magasság */
+    background-color: #ffffff; /* Fehér háttér a leírásnak */
+    padding: 20px; /* Padding a leírás körül */
+    border-radius: 10px; /* Lekerekített sarkok */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Árnyék a leírás alatt */
+    margin: 20px 0; /* Térköz a leírás körül */
+}
+
+.terms-description1 ul {
+    list-style-type: none; /* Felsorolásjelek eltüntetése */
+    padding: 0; /* Padding eltávolítása */
+    margin: 0; /* Margin eltávolítása */
+}
+
+.process-container1 {
+    display: flex; /* Flexbox a lépések elrendezéséhez */
+    justify-content: center; /* Középre igazítás */
+    align-items: center; /* Középre igazítás függőlegesen */
+    flex-wrap: wrap; /* Flexbox wrap, hogy a lépések új sorba kerüljenek, ha szükséges */
+    margin: 20px 0; /* Térköz a folyamatábra körül */
+}
+
+.process-step1 {
+    background-color: #ffffff; /* Fehér háttér a lépésekhez */
+    border: 1px solid #ddd; /* Határvonal */
+    border-radius: 10px; /* Lekerekített sarkok */
+    padding: 20px; /* Térköz a lépésen belül */
+    width: 150px; /* Lépés szélessége */
+    text-align: center; /* Középre igazított szöveg */
+    margin: 10px; /* Térköz a lépések között */
+    position: relative; /* Pozicionálás a számhoz */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Árnyék a lépések alatt */
+}
+
+.process-step1 h4 {
+    margin: 10px 0; /* Térköz a cím körül */
+}
+
+.step-number1 {
+    background-color: #77604e; /* Szám háttérszín */
+    color: white; /* Szám szöveg szín */
+    border-radius: 50%; /* Kör alakú szám */
+    width: 40px; /* Szám szélessége */
+    height: 40px; /* Szám magassága */
+    display: flex; /* Flexbox a szám középre igazításához */
+    align-items: center; /* Középre igazítás függőlegesen */
+    justify-content: center; /* Középre igazítás vízszintesen */
+    margin: 0 auto 10px; /* Térköz a szám alatt */
+}
+
+.arrow1 {
+    font-size: 2em; /* Nyíl mérete */
+    color: #4a3c2a; /* Nyíl szín */
+    margin: 0 10px; /* Térköz a nyíl körül */
+}
+
+.highlight-box1 {
+    background-color: #c2b5a5; 
+    border: 1px solid #c2b5a5; /* Határvonal */
+    border-radius: 8px; /* Lekerekített sarkok */
+    padding: 15px; /* Térköz a doboz körül */
+    margin: 15px 0; /* Térköz a doboz körül */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Árnyék a doboz alatt */
+}
+
+
+p1 {
+    color: #ffffff; /* Szöveg szín */
+    font-size: 1.1em; /* Betűméret */
+    line-height: 1.6; /* Sor magasság */
+}
+
+#faq {
+    background-color: #f9f9f9; /* Világos háttérszín */
+    padding: 40px 20px; /* Tágas padding */
+    border-radius: 10px; /* Lekerekített sarkok */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Árnyék a szekció alatt */
+    margin: 20px auto; /* Középre igazítás */
+    max-width: 800px; /* Maximális szélesség */
+}
+
+.faq-item {
+    margin-bottom: 10px; /* Térköz a kérdések között */
+}
+
+.faq-question {
+    cursor: pointer; /* Kattintható */
+    background-color: #4a3c2a; /* Háttérszín */
+    color: white; /* Szöveg szín */
+    padding: 15px; /* Padding */
+    border: none; /* Nincs keret */
+    border-radius: 5px; /* Lekerekített sarkok */
+    width: 100%; /* Teljes szélesség */
+    text-align: left; /* Balra igazítás */
+    transition: background-color 0.3s; /* Áttűnés a háttérszín változásakor */
+}
+
+.faq-question:hover {
+    background-color: #6b5b4a; /* Hover állapot */
+}
+
+.faq-answer {
+    max-height: 0; /* Alapértelmezett rejtett válasz */
+    overflow: hidden; /* Rejtett tartalom */
+    transition: max-height 0.3s ease; /* Magasság átmenet */
+    padding: 0 10px; /* Padding a válasz körül */
+    border-left: 2px solid #a18d71; /* Bal oldali határ */
+    margin: 0; /* Térköz eltávolítása */
+}

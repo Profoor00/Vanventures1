@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GYIK - VanVentures</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <a href="Vanventures.html">
+            <img src="images/logo.png" alt="Lakóautó Bérlés Logó">
+        </a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="Rólunk.html">Rólunk</a></li>
+            <li><a href="Vanventures.html#vehicles">Járművek</a></li>
+            <li><a href="Tartozékok.html">Tartozékok</a></li>                
+            <li><a href="Vanventures.html#booking">Időpontfoglalás</a></li>
+            <li><a href="Feltételek.html">Szerződési feltételek</a></li>
+            <li><a href="Szabályok.html">Szabályok</a></li>
+            <li><a href="Vanventures.html#contact">Kapcsolat</a></li>
+            <li><a href="gyik.html">GYIK</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="faq">
+    <h2>GYIK - Gyakran Ismételt Kérdések</h2>
+    
+    <div class="faq-item">
+        <button class="faq-question">1. Milyen járműveket kínálnak?</button>
+        <div class="faq-answer">A legjobb lakóautókat kínáljuk, amelyek kényelmes utazást biztosítanak.</div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">2. Hogyan foglalhatok időpontot?</button>
+        <div class="faq-answer">Időpontot foglalhat online a weboldalunkon keresztül.</div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">3. Milyen feltételek vonatkoznak a bérlésre?</button>
+        <div class="faq-answer">A bérléshez érvényes jogosítvány és személyazonosító okmány szükséges.</div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">4. Van-e biztosítás a járműveken?</button>
+        <div class="faq-answer">Igen, minden járműhöz biztosítást kínálunk.</div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">5. Milyen kiegészítőket kínálnak?</button>
+        <div class="faq-answer">Kínálunk kiegészítőket, mint például kemping felszerelés, konyhai eszközök és egyéb kényelmi szolgáltatások.</div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Vanventures. Minden jog fenntartva.</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+
+            // Toggle the display of the answer
+            if (answer.style.maxHeight) {
+                answer.style.maxHeight = null; // Ha nyitva van, zárd be
+            } else {
+                answer.style.maxHeight = answer.scrollHeight + 'px'; // Ha zárva van, nyisd ki
+            }
+
+            // Toggle the active class for arrow rotation (ha van ilyen)
+            question.classList.toggle('active');
+        });
+    });
+});
+</script>
+
+</body>
+</html>

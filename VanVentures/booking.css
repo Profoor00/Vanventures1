@@ -1,0 +1,60 @@
+#foglalas {
+    background-color: #f9f9f9; /* Világos háttérszín */
+    padding: 40px 20px; /* Tágas padding */
+    margin: 20px auto; /* Középre igazítás */
+    border-radius: 10px; /* Lekerekített s arkok */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Árnyék a szekció alatt */
+    max-width: 800px; /* Maximális szélesség */
+}
+
+#foglalas h2 {
+    color: #4a3c2a; /* Cím szín */
+    margin-bottom: 20px; /* Térköz a cím alatt */
+    text-align: center; /* Középre igazítás */
+}
+
+#foglalas .form-group1 {
+    margin-bottom: 20px; /* Térköz a mezők között */
+    text-align: left; /* Balra igazított szöveg */
+}
+
+#foglalas .form-group1 label {
+    display: block; /* A címkék blokk szintű elemek */
+    margin-bottom: 5px; /* Térköz a címke alatt */
+    font-weight: bold; /* Félkövér címkék */
+}
+
+#foglalas .form-group1 input[type="text"],
+#foglalas .form-group1 input[type="email"],
+#foglalas .form-group1 input[type="tel"] {
+    width: 100%; /* Szélesség 100% */
+    padding: 10px; /* Padding a mezők körül */
+    border: 1px solid #ccc; /* Határ */
+    border-radius: 5px; /* Lekerekített sarkok */
+    font-size: 16px; /* Betűméret */
+    box-sizing: border-box; /* Box-sizing beállítása */
+}
+
+#foglalas button {
+    display: block; /* Blokk szintű elem */
+    margin-top: 20px; /* Térköz a gomb felett */
+    width: 100%; /* Gomb szélessége 100% */
+    background-color: #4a3c2a; /* Gomb háttérszín */
+    color: white; /* Gomb szöveg szín */
+    border: none; /* Nincs határ */
+    padding: 10px; /* Padding a gomb körül */
+    border-radius: 5px; /* Lekerekített sarkok */
+    cursor: pointer; /* Kéz kurzor */
+    font-size: 16px; /* Betűméret */
+    transition: background-color 0.3s; /* Áttűnés a háttérszín változásakor */
+}
+
+#foglalas button:hover {
+    background-color: #6b5b4a; /* Gomb háttérszín hover állapotban */
+}
+
+@media (max-width: 600px) {
+    #foglalas .form-group input {
+        font-size: 14px; /* Kisebb betűméret mobilon */
+    }
+}
